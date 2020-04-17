@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>REST Anywhere</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="static/styles/screen.css" />
+    
+    <!--
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fromdatawithlove.com/assets/fonts/brandon-grotesque/style.css" rel="stylesheet">
+    <link href="https://fromdatawithlove.com/assets/fonts/gotham/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://fromdatawithlove.com/assets/styles/redoc.css" />
+	-->
+    <meta name="description" content="Read any API Documentation without special software">
+    <meta name="author" content="From Data With Love">
+
+    <title>API Documentation | REST Anywhere</title>
+
+    <!--
+    <link rel="icon" href="http://fromdatawithlove.com/favicon.ico" />
+    <link rel="canonical" href="https://fromdatawithlove.com" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gaitatzis" />
+    <meta name="twitter:title" content="Improve outreach, target customers | From Data With Love" />
+    <meta name="twitter:description" content="Enrich your contact lists with intelligent demographics. Convert names and companies into email addreses, income ranges, and job roles." />
+    <meta name="twitter:image" content="https://fromdatawithlove.com/assets/images/identity-resolution.jpg" />
+
+    <meta property="og:url" content="https://fromdatawithlove.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Improve outreach, target customers | From Data With Love" />
+    <meta property="og:description" content="Enrich your contact lists with intelligent demographics. Convert names and companies into email addreses, income ranges, and job roles." />
+    <meta property="og:image" content="https://fromdatawithlove.com/assets/images/identity-resolution.jpg" />
+	-->
+
+    <!-- Google Tag Manager -->
+    <!--
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TP2PP49');</script>
+-->
+    <!-- End Google Tag Manager -->
+
+    <!--
+    ReDoc doesn't change outer page styles
+    -->
+    <!--style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style-->
+  </head>
+  <body>
+  	<script>
+
+		function getUrlParameter(name) {
+			name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+			var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+			var results = regex.exec(location.search);
+			return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+		}
+
+		function getUrlParameter(name) {
+			name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+			var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+			var results = regex.exec(location.search);
+			return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+		}
+
+		var url = getUrlParameter('q');
+		url = url.replace(/(https?:\/\/bitbucket.org\/[\w-_\.\/]*\/)(src|raw)/, "$1src");
+		url = url.replace(/(https?:\/\/github.com\/)([\w-_\.]*\/[\w-_\.]*)\/blob/ig, "https://raw.githubusercontent.com/$2");
+
+		document.write('<redoc spec-url="' + url + '"></redoc>');
+  	</script>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+  </body>
+</html>

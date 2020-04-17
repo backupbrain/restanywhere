@@ -1,0 +1,46 @@
+/* Visual inspiration: https://www.internetingishard.com/ */
+
+.frame_viewer {
+	border-width: 0;
+	position: absolute;
+    top: 20;
+    right: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: calc(100vh - 4.27em);
+}
+.alerts {
+	position: absolute;
+	top: 4.27em;
+}
+.alert {
+	margin-bottom: 0;
+	transition: all 0.1s linear;
+}
+.hidden {
+	height: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: hidden;
+	transition: all 0.1s linear;
+}
+h1 {
+	font-family: 'Amaranth', sans-serif;
+}
+.subtitle {
+	font-family: 'Amaranth', sans-serif;
+}
+.sc-hXRMBi.nGwee {
+	display: none;
+}
+figure img {
+	-webkit-box-shadow: 5px 5px 16px -6px rgba(0,0,0,0.5);
+	-moz-box-shadow: 5px 5px 16px -6px rgba(0,0,0,0.5);
+	box-shadow: 5px 5px 16px -6px rgba(0,0,0,0.5);
+}
+.btn.input-group-append {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}

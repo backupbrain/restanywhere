@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FromDataWithLove API Documentation</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fromdatawithlove.com/assets/fonts/brandon-grotesque/style.css" rel="stylesheet">
+    <link href="https://fromdatawithlove.com/assets/fonts/gotham/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://fromdatawithlove.com/assets/styles/redoc.css" />
+	-->
+    <meta name="description" content="Improve outreach, target customers | From Data With Love">
+    <meta name="author" content="From Data With Love">
+
+    <title>API Documentation | REST Anywhere</title>
+
+    <!--link rel="stylesheet" href="static/styles/bootstrap-darkly.css" /-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+    <link rel="stylesheet" href="static/styles/screen.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="module" src="static/scripts/app.js"></script>
+
+    <!--
+    <link rel="icon" href="http://fromdatawithlove.com/favicon.ico" />
+    <link rel="canonical" href="https://fromdatawithlove.com" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gaitatzis" />
+    <meta name="twitter:title" content="Improve outreach, target customers | From Data With Love" />
+    <meta name="twitter:description" content="Enrich your contact lists with intelligent demographics. Convert names and companies into email addreses, income ranges, and job roles." />
+    <meta name="twitter:image" content="https://fromdatawithlove.com/assets/images/identity-resolution.jpg" />
+
+    <meta property="og:url" content="https://fromdatawithlove.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Improve outreach, target customers | From Data With Love" />
+    <meta property="og:description" content="Enrich your contact lists with intelligent demographics. Convert names and companies into email addreses, income ranges, and job roles." />
+    <meta property="og:image" content="https://fromdatawithlove.com/assets/images/identity-resolution.jpg" />
+	-->
+
+    <!-- Google Tag Manager -->
+    <!--
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TP2PP49');</script>
+-->
+    <!-- End Google Tag Manager -->
+
+    <!--
+    ReDoc doesn't change outer page styles
+    -->
+    <!--style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style-->
+    <script>
+    	var app = null;
+    	var url = 'https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/api-with-examples.yaml';
+    </script>
+  </head>
+  <body>
+  	<div id="app">
+  		<nav class="navbar d-flex">
+			<a class="navbar-brand" href="index.html">
+			<img src="static/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+			Rest Away
+			</a>
+
+
+
+			<form @submit.prevent="loadNewUrl()" class="form-inline flex-grow-1 d-flex">
+
+				<div class="input-group flex-grow-1 d-flex">
+					<input
+						type="url"
+						class="form-control flex-grow-1"
+						placeholder="http://example.com"
+						aria-label="API URL"
+						aria-describedby="basic-addon2"
+						v-model="docUrl"
+						ref="urlInput"
+					/>
+					<button
+						class="btn btn-success input-group-append my-2 my-sm-0"
+						type="submit"
+						:disabled="isWorking || !isValidLink"
+						@click="loadNewUrl()"
+					>
+						<i
+							class="fas fa-folder-open pt-1 mr-1"
+							v-if="!isWorking"
+						></i>
+						<span
+							class="spinner-border spinner-border-sm mt-1 mr-1"
+							role="status" aria-hidden="true"
+							v-if="isWorking"
+						></span>
+						<span class="d-none d-lg-inline">
+							Open
+						</span>
+					</button>
+				</div>
+				<button
+					class="btn btn-success my-2 my-sm-0 ml-2"
+					type="button"
+					:disabled="isWorking || !isValidLink"
+					@click="copyPermalink()"
+				>
+					<i class="fas fa-link"></i>
+					<span class="d-none d-lg-inline">
+						Permalink
+					</span>
+				</button>
+				<button
+					class="btn btn-success my-2 my-sm-0 ml-2"
+					type="button"
+					ref="sidebar"
+					title="Rest Anywhere documentation for ____"
+					:disabled="isWorking || !isValidLink"
+					@click="bookmark()"
+				>
+					<i class="fas fa-bookmark"></i>
+					<span class="d-none d-lg-inline">
+						Bookmark
+					</span>
+				</button>
+				<button
+					class="btn btn-success my-2 my-sm-0 ml-2"
+					type="button"
+					@click="openHelp()"
+				>
+					<span class="d-none d-lg-inline">
+						<i class="fas fa-question"></i>
+						<span class="d-none d-lg-inline">
+							Help
+						</span>
+					</span>
+				</button>
+			</form>
+
+		</nav>
+		<article class="alerts fixed-top">
+			<div
+				v-for="(alert, index) in alerts"
+				:key="'alert_' + index"
+			>
+				<alert
+					:type="alert.type"
+					:message="alert.message"
+					:ref="'alert_' + index"
+				></alert>
+			</div>
+		</article>
+  	</div>
+	<iframe
+		id="docWindow"
+		class="frame_viewer"
+		src="intro.html"
+		ref="docWindow"
+	></iframe>
+  </body>
+</html>
