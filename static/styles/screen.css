@@ -1,5 +1,11 @@
 /* Visual inspiration: https://www.internetingishard.com/ */
-
+body {
+	font-size: 18px;
+}
+div, p, input, textarea, button, li, td, th, dd, dt {
+	font-family: 'PT Sans', sans-serif;
+	letter-spacing: 0.6px;
+}
 .frame_viewer {
 	border-width: 0;
 	position: absolute;
@@ -29,6 +35,22 @@
 h1 {
 	font-family: 'Amaranth', sans-serif;
 }
+h2 {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+}
+h2 span {
+    /* background: #222; */
+    background: #fff;
+    padding: 0 10px;
+}
+.jumbotron h2 span {
+	background-color: #e9ecef;
+	/* background-color: #303030; */
+}
 .subtitle {
 	font-family: 'Amaranth', sans-serif;
 }
@@ -43,4 +65,17 @@ figure img {
 .btn.input-group-append {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
+}
+.padding {
+	padding: 3em 0 1em 0;
+}
+.container {
+	max-width: 600px;
+}
+p {
+	margin-bottom: 1.5em;
+}
+.list-group {
+	max-width: 300px;
+	margin: 0px auto;
 }

@@ -3,35 +3,34 @@
 	<head>
 		<title>Introduction</title>
 
-		<link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=PT+Sans&display=swap" rel="stylesheet">
 
+    	<!--link rel="stylesheet" href="static/styles/bootstrap-darkly.css" /-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="static/styles/screen.css" />
 	</head>
 	<body>
-
-		<header>
+		<header class="jumbotron jumbotron-fluid">
 			<section class="container text-center">
-
 				<img src="static/images/documentation-metaphor.png" />
-				<h1>Reading Documentation is Hard</h1>
-				<div class="subtitle">But it doesn't have to be</div>
-				<div class="outcome">Read OpenAPI docs in your web browser</div>
+				<h1 class="display-4 mb-4 pb-4">API Docs Suck</h1>
+				<h2 class="subtitle mb-4"><span>But they don't have to</span></h2>
+				<div class="lead outcome mt-4 pt-4">Read OpenAPI docs in your web browser</div>
 			</section>
 		</header>
 		<article >
-			<section class="about container text-center">
-				<h2>What is this</h2>
-				<p>
+			<section class="about container text-center padding">
+				<h2><span>What is this</span></h2>
+				<p class="mt-4 pt-4">
 					Reading API docs shouldn't be hard. I'm making it easier
 					by displaying docs in this web application.
 				</p>
 
 			</section>
-			<section class="howitworks container text-center">
-				<h2>How it works</h2>
-				<p>
-					Type or paste an OpenAPI doc URL into the input above and click "Open Doc". The API will load in this area of the browser. You can use it with any public API doc online, as long as it's formatted in JSON or YAML. This includes documentation produced in Swagger and Apiary.
+			<section class="howitworks container text-center padding">
+				<h2><span>How it works</span></h2>
+				<p class="mt-4 pt-4">
+					Type or paste an OpenAPI doc URL into the input above and click "Open". The API will load in this area of the browser. You can use it with any public API doc online, as long as it's formatted in JSON or YAML. This includes documentation produced in Swagger and Apiary.
 				</p>
 				<p>You can even open docs hosted on GitHub or BitBucket.</p>
 				<figure>
@@ -42,22 +41,29 @@
 				</figure>
 
 			</section>
-			<section class="howitworks container text-center">
-				<h2>Examples</h2>
-				<p>
+			<section class="howitworks container text-center padding">
+				<h2><span>Examples</span></h2>
+				<p class="mt-4 pt-4">
 					Don't know where to start? Try one of these:
 				</p>
-				<ul>
-					<li><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/api-with-examples.yaml">API with examples</a></li>
-					<li><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/callback-example.yaml">API with callbacks Example</a></li>
-					<li><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/link-example.yaml">API with links Example</a></li>
+				<ul class="list-group">
+					<li class="list-group-item"><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/api-with-examples.yaml">API with examples</a></li>
+					<li class="list-group-item"><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/callback-example.yaml">API with callbacks Example</a></li>
+					<li class="list-group-item"><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/link-example.yaml">API with links Example</a></li>
 
-					<li><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore.yaml">Pet Store Example</a></li>
-					<li><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml">Pet Store (Expanded) Example</a></li>
-					<li><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/uspto.yaml">USPTO Example</a></li>
+					<li class="list-group-item"><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore.yaml">Pet Store Example</a></li>
+					<li class="list-group-item"><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml">Pet Store (Expanded) Example</a></li>
+					<li class="list-group-item"><a target="_top" href="index.html?q=https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/uspto.yaml">USPTO Example</a></li>
 				</ul>
 
 			</section>
 		</article>
+		<footer class="pt-4 pb-4">
+			<section class="container pb-4">
+				<div id="copyright">
+					&copy; 2020 <a href="https://github.com/backupbrain">Tony Gaitatzis</a>, <a href="https://opensource.org/licenses/MIT">MIT License</a>
+				</div>
+			</section>
+		</footer>
 	</body>
 </html>
