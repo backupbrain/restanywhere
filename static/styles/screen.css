@@ -14,11 +14,11 @@ div, p, input, textarea, button, li, td, th, dd, dt {
     left: 0;
     width: 100%;
     bottom: 0;
-    height: calc(100vh - 4.27em);
+    height: calc(100vh - 3.27em);
 }
 .alerts {
 	position: absolute;
-	top: 4.27em;
+	top: 3.27em;
 }
 .alert {
 	margin-bottom: 0;
