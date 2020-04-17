@@ -1,4 +1,4 @@
-# REST Anywhere
+# REST Away
 This project lets you view OpenAPI documentation from a URL.
 
 It takes YAML or JSON-formatted OpenAPI docs and displays them in a readable format.
